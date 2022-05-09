@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title></title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" type="text/css" href=" style.css">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+   </head>
+   
+   <body>
+      <div class="container">
+         <h2 class="head">Basic Calculator</h2>
+         <form name="calculator" class="form-group">
+            <table >
+              <!--display section-->
+               <tr>
+
+                  <td colspan="4">           
+                     <input type="text" name="display" id="display"  class="form-control" ><br>
+                     <input type="text" name="display" id="sec" class="form-control"  >
+                     <br>
+                     <input type="text" name="display" id="sign" class="form-control" placeholder="hello" style="text-align: right ; display: none; background-color: grey" >
+                  </td>
+               </tr>
+<!--                Button Section -->
+               <tr>
+                  <td><input type="button" name="one" class="btn-lg btn-info" value="1"  id="one" onclick="ONE()" ></td>
+                  <td><input type="button" name="two" value="2" class="btn-lg btn-info"   id="two" onclick="TWO()"></td>
+                  <td><input type="button" name="three" value="3" class="btn-lg btn-info" id="three" onclick="THREE()"></td>
+                  <td><input type="button" class="btn-lg btn-danger btn-block"  name="plus" value="+" id="plus"  onclick="PLUS()"></td>
+               </tr>
+               <tr>
+                  <td><input type="button" name="four" class="btn-lg btn-info" value="4" id="four" onclick="FOUR()"></td>
+                  <td><input type="button" name="five" class="btn-lg btn-info" value="5" id="five" onclick="FIVE()"></td>
+                  <td><input type="button" name="six" class="btn-lg btn-info btn-block" value="6" id="six" onclick="SIX()"></td>
+                  <td><input type="button" class="btn-lg btn-danger btn-block"  name="minus" value="-" id="minus" onclick="MINUS()"></td>
+               </tr>
+               <tr>
+                  <td><input type="button" name="seven" value="7" class="btn-lg btn-info" id="seven" onclick="SEVEN()"></td>
+                  <td><input type="button" name="eight" value="8" class="btn-lg btn-info" id="eight" onclick="EIGHT()"></td>
+                  <td><input type="button" name="nine" value="9" class="btn-lg btn-info" id="nine" onclick="NINE()"></td>
+                  <td><input type="button" class="btn-lg btn-danger btn-block" name="times" id="mul" value="*" onclick="MUL()"></td>
+               </tr>
+               <tr>
+                  <td><input type="button" id="clear" name="clear" class="btn-lg btn-success btn-block" value="c" onclick="CLEAR()"></td>
+                  <td><input type="button" name="zero" value="0" class="btn-lg btn-info"s onclick="ZERO()"></td>
+                  <td><input type="button" name="" value="=" class="btn-lg btn-success" onclick="EQUAL()"></td>
+                  <td><input type="button"  class="btn-lg btn-danger btn-block"  name="div" value="/" onclick="divide()"></td>
+               </tr>
+            </table>
+         </form>
+      </div>
+      <!-- <div id="Banner">
+         Digital Clock
+         <div id="clock">
+         </div>
+      </div> -->
+      <script >
+         var sign="";
+         var first="";         
+         var second="";       
+         function  ONE()
+         {         
+             document.getElementById("display").value += 1;
+             document.getElementById("sec").value+= 1;
+         }
+                        
+         function  TWO()
+         {        
+          document.getElementById("display").value += 2;
+          document.getElementById("sec").value += 2;                  
+         }
+              
+         function  THREE()
+         {
+            document.getElementById("display").value += 3;
+            document.getElementById("sec").value+= 3;
+                
+         }
+         
+         function  FOUR()
+         {         
+                 document.getElementById("display").value += 4;
+                 document.getElementById("sec").value+= 4;        
+                 
+         }
+             
+         function  FIVE()
+         {         
+                 document.getElementById("display").value += 5;
+                 document.getElementById("sec").value+= 5;                 
+                    
+         }
+              function  SIX(){
+         
+                 document.getElementById("display").value += 6;
+                    document.getElementById("sec").value+= 6;
+         
+                 
+             }
+              function  SEVEN(){
+         
+                 document.getElementById("display").value += 7;
+                    document.getElementById("sec").value+= 7;
+             }
+              function  EIGHT(){
+                    document.getElementById("sec").value+= 8;
+                 document.getElementById("display").value += 8;
+               
+                 
+             }
+              function  NINE(){
+                    document.getElementById("sec").value+= 9;
+                 document.getElementById("display").value += 9;
+               }
+              function  ZERO(){
+         
+                 document.getElementById("display").value += 0;
+                 document.getElementById("sec").value+= 0;
+             }
+             
+         
+         function  divide(){
+                 first=document.getElementById('sec').value;
+                 document.getElementById('sec').value='';
+                 document.getElementById('sign').value='/';
+                 document.getElementById("display").value+="/";
+         }
+         function  PLUS()
+         {
+                     first=document.getElementById('sec').value;
+                     document.getElementById("display").value+="+";
+                     document.getElementById('sec').value='';
+                     document.getElementById('sign').value='+';
+         }
+         function  MINUS()
+         {
+             first = document.getElementById('sec').value;
+             document.getElementById('display').value+='-';
+             document.getElementById('sign').value='-';
+             document.getElementById('sec').value='';
+         
+                                
+                 
+         
+         
+         
+         
+         }
+         
+         function  MUL()
+         
+         {
+         
+             first=document.getElementById('sec').value;
+                 document.getElementById("display").value+="*";
+                 document.getElementById('sign').value='*';              
+                 document.getElementById("sec").value='';
+         
+             
+                }
+             
+          
+         function  EQUAL()
+         {
+         
+              if (document.getElementById('sign').value!=''){
+                     if (document.getElementById('sign').value=='+'){
+                         document.getElementById('sec').value=parseFloat(first)+parseFloat(document.getElementById('sec').value);
+                          second=document.getElementById('sec').value;
+                          console.log(second);
+         
+                     }
+                     else if (document.getElementById('sign').value=='*'){
+                          document.getElementById('sec').value=parseFloat(first)*parseFloat(document.getElementById('sec').value);
+                     }
+                    else if (document.getElementById('sign').value=='-'){
+                          document.getElementById('sec').value=parseFloat(first)-parseFloat(document.getElementById('sec').value);
+                     }
+                     else if (document.getElementById('sign').value=='/'){
+                          document.getElementById('sec').value=parseFloat(first)/parseFloat(document.getElementById('sec').value);
+                     }
+                }
+                 
+             }
+             function CLEAR(){
+                 document.getElementById("display").value= " ";
+                  document.getElementById("sign").value= " ";
+                  document.getElementById("sec").value= " ";
+             }
+         
+         
+      </script>
+     <!--  <script type="text/javascript">
+         setInterval(function(){
+         var currentTime=new Date();
+         var hours= currentTime.getHours();
+         var minutes= currentTime.getMinutes();
+         var seconds= currentTime.getSeconds();
+         var period="AM";
+         if( hours>=12){
+         period="PM";
+         
+         }
+         if (hours>12) {
+         hours= hours-12;
+         }
+         if(seconds<10){
+         seconds="0"+ seconds;
+         }
+         if(minutes<10){
+         minutes="0"+ minutes;
+         }
+         var clockTime= hours+":"+ minutes+ ":"+ seconds+ " "+ period;
+         var clock= document.getElementById("clock");
+         document.getElementById('clock').innerText= clockTime;         
+         },1000);
+         
+      </script> -->
+   </body>
+</html>
